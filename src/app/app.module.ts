@@ -10,12 +10,9 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user/user.service';
 
-const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home'},
-  { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'user', component: UserComponent}
-];
+import { AppRoutingModule } from './app-routing.module';
+import { MessageService } from './message.service';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +22,12 @@ const routes: Routes = [
     UserComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppService, UserService],
+  providers: [AppService, UserService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

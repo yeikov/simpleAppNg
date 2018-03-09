@@ -5,8 +5,6 @@ import { Router } from '@angular/router';
 import 'rxjs/add/operator/finally';
 
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
