@@ -1,7 +1,7 @@
 import { Injectable, Optional, Inject } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './User';
+import { User } from './user';
 import { Observable } from 'rxjs/Observable';
 import { MessageService } from '../message.service';
 import { catchError, tap } from 'rxjs/operators';
