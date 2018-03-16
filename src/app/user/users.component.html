@@ -1,13 +1,15 @@
 <h1>User</h1>
 
 <div>
-		<li *ngFor="let user of users; index as i">
-				<p>The ID is {{user.id}}</p>
-				<p>The name is {{user.name}}</p>
-				<p>The content is {{user.password}}</p>
-			</li>
+	<p><a routerLinkActive="active" routerLink="/users/add">Add a User</a></p>
 </div>
 
-<div>
-	<p>asdf</p>
+<div>	
+		<div *ngFor="let user of users; index as i">
+			<p>
+				<span>{{user.id}} </span>
+				<span>{{user.name}} </span>
+				<span>{{user.password}}</span>
+			</p>
+		</div>
 </div>

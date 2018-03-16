@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent {
 
   title = 'Demo';
-  users;
+  /* users;*/
 
   constructor(private app: AppService, private http: HttpClient) {
-    http.get('http://localhost:8080/' + 'back-users').subscribe(data => this.users = data);
+    /* http.get('http://localhost:8080/' + 'back-users').subscribe(data => this.users = data); */
   }
 
   authenticated() { return this.app.authenticated; }

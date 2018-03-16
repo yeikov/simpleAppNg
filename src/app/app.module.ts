@@ -8,6 +8,8 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login.component';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { DetailComponent } from './user/detail.component';
+import { UserAddComponent } from './user/user-add.component';
 import { UserService } from './user/user.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +21,9 @@ import { MessageService } from './message.service';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    UserAddComponent,
+    DetailComponent
   ],
   imports: [
     AppRoutingModule,

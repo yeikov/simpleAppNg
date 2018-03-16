@@ -5,10 +5,16 @@ import { User } from './user';
 import { Observable } from 'rxjs/Observable';
 import { MessageService } from '../message.service';
 import { catchError, tap } from 'rxjs/operators';
+import { HttpParams } from '@angular/common/http/src/params';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable()
 export class UserService {
-  private userServerPathUrl = 'http://localhost:8080/back-users';
+  private userServerPathUrl = 'http://localhost:8080/users';
 
   constructor (
     private http: HttpClient,
@@ -16,7 +22,7 @@ export class UserService {
     ) { }
 
   getUsersss () {
-    this.http.get(this.userServerPathUrl + 'back-users').subscribe(data => {
+    this.http.get(this.userServerPathUrl).subscribe(data => {
         console.log('user.service.getUsers()');
         console.log(data);
         return data;
@@ -36,9 +42,40 @@ export class UserService {
       );
   }
 
-  /** Log a UserService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add('UserService: ' + message);
+
+  /* addUser(data) {
+    console.log('data');
+    console.log(data.name);
+    const obj = {
+       id: data.id,
+       idforest: data.name,
+       numcataleg: data.password
+
+     };
+     return this.http.post(this.userServerPathUrl + '/add',  obj );
+
+   } */
+
+  addUser (user: User): Observable<User> {
+    console.log(user);
+    return this.http.post<User>(this.userServerPathUrl + '/add', user);
   }
+
+  getUser (id) {
+    this.http.get<User[]>(this.userServerPathUrl + '/' + id).subscribe( data => data );
+      return this.http.get<User[]>(this.userServerPathUrl + '/' + id)
+        .pipe(
+        tap(user => console.log('fetch user'))
+/*
+        ,
+        catchError(this.handleError('getUsers', []))
+ */
+      );
+  }
+
+  /** Log a UserService message with the MessageService */
+  /* private log(message: string) {
+    this.messageService.add('UserService: ' + message);
+  } */
 
 }
