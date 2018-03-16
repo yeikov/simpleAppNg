@@ -35,15 +35,16 @@ export class UserService {
       return this.http.get<User[]>(this.userServerPathUrl)
         .pipe(
         tap(users => console.log('fetched users'))
-/*
+        /*
         ,
         catchError(this.handleError('getUsers', []))
- */
+        */
       );
   }
 
 
-  /* addUser(data) {
+  /*
+  addUser(data) {
     console.log('data');
     console.log(data.name);
     const obj = {
@@ -51,14 +52,15 @@ export class UserService {
        idforest: data.name,
        numcataleg: data.password
 
-     };
-     return this.http.post(this.userServerPathUrl + '/add',  obj );
-
-   } */
+    };
+    return this.http.post(this.userServerPathUrl + '/add',  obj );
+  } */
 
   addUser (user: User): Observable<User> {
+    console.log('service.addUser user:');
     console.log(user);
-    return this.http.post<User>(this.userServerPathUrl + '/add', user);
+    // return this.http.post<User>('http://localhost:8080/user/add', user);
+    return this.http.get<User>('http://localhost:8080/users/add' + '/?name=' + user.name + '&password=' + user.password);
   }
 
   getUser (id) {
@@ -66,10 +68,10 @@ export class UserService {
       return this.http.get<User[]>(this.userServerPathUrl + '/' + id)
         .pipe(
         tap(user => console.log('fetch user'))
-/*
+        /*
         ,
         catchError(this.handleError('getUsers', []))
- */
+        */
       );
   }
 
