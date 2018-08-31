@@ -1,0 +1,11 @@
+
+div.cont {
+  color: rgba(0, 0, 0, 0.87);
+  flex-grow: 1;
+  font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-top: 20px
+  }
