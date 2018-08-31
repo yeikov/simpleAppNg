@@ -1,0 +1,14 @@
+<h1>center</h1>
+
+<div>
+	<p><a routerLinkActive="active" routerLink="/centers/add">Add a Center</a></p>
+</div>
+
+<div>	
+		<div *ngFor="let center of list; index as i">
+			<p>
+				<span>{{center.id}} </span>
+				<span>{{center.name}} </span>
+			</p>
+		</div>
+</div>

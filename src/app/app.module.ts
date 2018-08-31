@@ -12,6 +12,13 @@ import { DetailComponent } from './user/detail.component';
 import { UserAddComponent } from './user/user-add.component';
 import { UserService } from './user/user.service';
 
+// offers center
+import { CenterComponent } from './offer/center/center.component';
+import { CenterAddComponent } from './offer/center/center-add.component';
+import { CentersComponent } from './offer/center/centers.component';
+import { CenterService } from './offer/center/center.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { MessageService } from './message.service';
 
@@ -23,7 +30,10 @@ import { MessageService } from './message.service';
     LoginComponent,
     UserComponent,
     UserAddComponent,
-    DetailComponent
+    DetailComponent,
+    CentersComponent,
+    CenterComponent,
+    CenterAddComponent
   ],
   imports: [
     AppRoutingModule,
@@ -31,7 +41,7 @@ import { MessageService } from './message.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppService, UserService, MessageService],
+  providers: [AppService, UserService, CenterService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

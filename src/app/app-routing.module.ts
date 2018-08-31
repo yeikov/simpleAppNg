@@ -8,14 +8,22 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login.component';
 /* import { UserDetailComponent } from './user/user-detail.component'; */
 
+import { CenterComponent } from './offer/center/center.component';
+import { CenterAddComponent } from './offer/center/center-add.component';
+import { CentersComponent } from './offer/center/centers.component';
+
 const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full' },
  { path: 'home', component: HomeComponent},
  { path: 'login', component: LoginComponent},
  { path: 'users/add', component: UserAddComponent },
  { path: 'users/:id', component: DetailComponent },
- { path: 'users', component: UserComponent }
+ { path: 'users', component: UserComponent },
+ { path: 'centers/add', component: CenterAddComponent },
+ { path: 'centers/:id', component: CenterComponent },
+ { path: 'centers', component: CentersComponent }
 ];
+
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
