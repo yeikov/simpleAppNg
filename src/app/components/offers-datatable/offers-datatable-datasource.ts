@@ -38,10 +38,21 @@ import { Offer } from '../../models/offer';
  * (including sorting, pagination, and filtering).
  */
 export class OffersDatatableDataSource extends DataSource<Offer> {
-  data: Offer[]=null;
+  data: Offer[]=null
+  /*  = 
+  [{id: null,
+    title: null,
+    bussinesUnit: null,
+    center: null,
+    code: null,
+    description: null,
+    knowledgeArea: null,
+    tecCategory: null
+  }] */
 
   constructor(private paginator: MatPaginator, private sort: MatSort) {
     super();
+    //this.connect();
   }
 
   /**
@@ -64,6 +75,7 @@ export class OffersDatatableDataSource extends DataSource<Offer> {
     return merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
     }));
+    
   }
 
   /**
@@ -93,7 +105,7 @@ export class OffersDatatableDataSource extends DataSource<Offer> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        case 'title': return compare(a.title, b.title, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

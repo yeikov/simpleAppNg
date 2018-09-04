@@ -18,12 +18,23 @@ export class OffersDatatableComponent implements OnInit {
   dataSource: OffersDatatableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = [
+    'id', 
+    'title', 
+    'center', 
+    'bussinesUnit', 
+    'code',
+    'description',
+    'knowledgeArea',
+    'tecCategory'
+  ];
 
   ngOnInit() {
     //this.offerS.getOffers().subscribe(offers => this.data = offers);
     this.dataSource = new OffersDatatableDataSource(this.paginator, this.sort);
     
     this.offerS.getOffers().subscribe(offers => this.dataSource.data = offers);
+    //this.offerS.getOffers().subscribe(offers => console.log(offers));
+   
   }
 }

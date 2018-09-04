@@ -64,7 +64,7 @@ export class OfferService {
       // if not search term, return empty offer array.
       return of([]);
     }
-    return this.http.get<Offer[]>(`${this.offersUrl}/?name=${term}`).pipe(
+    return this.http.get<Offer[]>(`${this.offersUrl}/?title=${term}`).pipe(
       tap(_ => this.log(`found offers matching "${term}"`)),
       catchError(this.handleError<Offer[]>('searchOffers', []))
     );

@@ -1,15 +1,51 @@
 <div class="mat-elevation-z8">
-  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements" class="manip">
     <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
       <td mat-cell *matCellDef="let row">{{row.id}}</td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+    <!-- Name Title -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
       <td mat-cell *matCellDef="let row">{{row.title}}</td>
+    </ng-container>
+
+    <!-- Center Column -->
+    <ng-container matColumnDef="center">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Center</th>
+      <td mat-cell *matCellDef="let row">{{row.center}}</td>
+    </ng-container>
+
+    <!-- BussinesUnit Column -->
+    <ng-container matColumnDef="bussinesUnit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BussinesUnit</th>
+      <td mat-cell *matCellDef="let row">{{row.bussinesUnit}}</td>
+    </ng-container>
+
+    <!-- Code Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
+      <td mat-cell *matCellDef="let row">{{row.code}}</td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let row">{{row.description}}</td>
+    </ng-container>
+
+    <!-- KnowledgeArea Column -->
+    <ng-container matColumnDef="knowledgeArea">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>KnowledgeArea</th>
+      <td mat-cell *matCellDef="let row">{{row.knowledgeArea}}</td>
+    </ng-container>
+
+    <!-- TecCategory Column -->
+    <ng-container matColumnDef="tecCategory">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>TecCategory</th>
+      <td mat-cell *matCellDef="let row">{{row.tecCategory}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
